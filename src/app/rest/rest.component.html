@@ -1,0 +1,22 @@
+<h1>Employee Dashboard</h1>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Employee Id</th>
+      <th>Employee Name</th>
+      <th>Employee Salary</th>
+      <th>Employee Age</th>
+      <th>Profile Image</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees">
+      <td>{{employee.employeeId}}</td>
+      <td>{{employee.employeeName}}</td>
+      <td>{{employee.employeeSalary}}</td>
+      <td>{{employee.employeeAge}}</td>
+      <td>{{employee.profileImage}}</td>
+    </tr>
+  </tbody>
+</table>
