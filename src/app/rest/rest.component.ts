@@ -17,7 +17,11 @@ export class RestComponent implements OnInit {
       this.employees = response;
     })
   }
-
-
+  key:string = 'id';
+  reverse:boolean = false;
+  sort(key){
+    this.key=key;
+    this.reverse = !this.reverse;
+  }
 
 }
