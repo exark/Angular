@@ -4,6 +4,8 @@ import { AppComponent } from './app.component';
 import { RestComponent } from './rest/rest.component';
 import { HttpClientModule } from "@angular/common/http";
 import {CommonModule} from '@angular/common';
+import {NgxPaginationModule} from "ngx-pagination";
+import {Ng2OrderModule} from "ng2-order-pipe";
 
 
 @NgModule({
@@ -14,7 +16,9 @@ import {CommonModule} from '@angular/common';
   imports: [
     BrowserModule,
     HttpClientModule,
-    CommonModule
+    CommonModule,
+    NgxPaginationModule,
+    Ng2OrderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
