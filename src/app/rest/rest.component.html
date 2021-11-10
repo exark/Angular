@@ -1,10 +1,14 @@
 <h1>Employee Dashboard</h1>
-
-<table class="table table-bordered">
+<div *ngIf="employees.length>0">
+<nav class="navbar">
+  <input class="form-control" type= "text" name="employee_name" [(ngModel)]="employee_name" (ngModelChange)="Search()"
+      placeholder="Enter name to search">
+</nav>
+<table class="table table-responsive w-100 d-block d-md-table">
   <thead>
     <tr>
-      <th (click)="sort('employeeId')"> Employee Id&nbsp;<i class="fa fa-sort"></i></th>
-      <th (click)="sort('employeeName')">Employee Name&nbsp;<i class="fa fa-sort"></i></th>
+      <th (click)="sort('id')"> Employee Id&nbsp;<i class="fa fa-sort"></i></th>
+      <th (click)="sort('employee_name')">Employee Name&nbsp;<i class="fa fa-sort"></i></th>
       <th>Employee Salary</th>
       <th>Employee Age</th>
       <th>Profile Image</th>
@@ -12,12 +16,13 @@
   </thead>
   <tbody>
     <tr *ngFor="let employee of employees | orderBy: key : reverse | paginate:{itemsPerPage:10,currentPage:p};">
-      <td>{{employee.employeeId}}</td>
-      <td>{{employee.employeeName}}</td>
-      <td>{{employee.employeeSalary}}</td>
-      <td>{{employee.employeeAge}}</td>
-      <td>{{employee.profileImage}}</td>
+      <td>{{employee.id}}</td>
+      <td>{{employee.employee_name}}</td>
+      <td>{{employee.employee_salary}}</td>
+      <td>{{employee.employee_age}}</td>
+      <td>{{employee.profile_image}}</td>
     </tr>
   </tbody>
-  <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </table>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>

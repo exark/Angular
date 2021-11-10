@@ -1,16 +1,18 @@
 export class Employees {
-  employeeId:number;
-  employeeName:string;
-  employeeSalary:number;
-  employeeAge:number;
-  profileImage:string;
+  id:number;
+  employee_name:string;
+  employee_salary:number;
+  employee_age:number;
+  profile_image:string;
 
 
-  constructor(employeeId: number, employeeName: string, employeeSalary: number, employeeAge: number, profileImage: string) {
-    this.employeeId = employeeId;
-    this.employeeName = employeeName;
-    this.employeeSalary = employeeSalary;
-    this.employeeAge = employeeAge;
-    this.profileImage = profileImage;
+  constructor(id: number, employee_name: string, employee_salary: number, employee_age: number, profile_image: string) {
+    this.id = id;
+    this.employee_name = employee_name;
+    this.employee_salary = employee_salary;
+    this.employee_age = employee_age;
+    this.profile_image = profile_image;
   }
 }
+
+ 

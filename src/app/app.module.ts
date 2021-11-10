@@ -6,7 +6,8 @@ import { HttpClientModule } from "@angular/common/http";
 import {CommonModule} from '@angular/common';
 import {NgxPaginationModule} from "ngx-pagination";
 import {Ng2OrderModule} from "ng2-order-pipe";
-
+import {Ng2SearchPipeModule} from "ng2-search-filter";
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,9 @@ import {Ng2OrderModule} from "ng2-order-pipe";
     HttpClientModule,
     CommonModule,
     NgxPaginationModule,
-    Ng2OrderModule
+    Ng2OrderModule,
+    Ng2SearchPipeModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

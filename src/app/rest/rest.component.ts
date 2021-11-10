@@ -9,14 +9,14 @@ import {RestService} from "../rest.service";
 })
 export class RestComponent implements OnInit {
   employees: Employees[] = [];
-  employeeName:any;
+  employee_name:any;
   p:number=1
   constructor(public rs:RestService) {
 
   }
   ngOnInit(): void {
     this.rs.getData().subscribe((response) =>{
-      this.employees = response;
+      this.employees = response.data;
     })
   }
   key:string = 'id';
@@ -26,4 +26,14 @@ export class RestComponent implements OnInit {
     this.reverse = !this.reverse;
   }
 
+
+  Search(){
+    if(this.employee_name == ""){
+      this.ngOnInit();
+    }else{
+      this.employees = this.employees.filter(res =>{
+        return res.employee_name.toLocaleLowerCase().match(this.employee_name.toLocaleLowerCase());
+      });
+    }
+  }
 }

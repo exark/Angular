@@ -11,9 +11,9 @@ export class RestService {
 
   constructor(private http: HttpClient) { }
 
-  url: string = "http://localhost:3000/data";
+  url: string = "https://dummy.restapiexample.com/api/v1/employees?fbclid=IwAR3901P08-ordS7z0J4lq9t8fs5s7YMus3_1tLG-QgdKhvaopgmeryMXiUA";
 
-  getData(): Observable<Employees[]>{
-    return this.http.get<Employees[]>(this.url);
+  getData(): Observable<any>{
+    return this.http.get<any>(this.url);
   }
 }
